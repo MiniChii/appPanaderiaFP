@@ -1,14 +1,21 @@
-import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
-
-export default class CategoryBreadScreen extends Component {
-  render() {
-    return (
-      <View>
-        <Text> CategoryBreadScreen </Text>
-      </View>
-    )
-  }
+import React from 'react';
+import { Text, StyleSheet, View, Button } from 'react-native';
+export default function BreadDetailsScreen({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <Text> Productos de la categoría </Text>
+      <Button
+        title="Ir al detalle"
+        onPress={() => navigation.navigate('Detail')}
+      />
+    </View>
+  );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
