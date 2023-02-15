@@ -1,23 +1,32 @@
 import React from 'react';
-import { Text, StyleSheet, View, Button } from 'react-native';
+import { Text, StyleSheet, View, FlatList } from 'react-native';
 import CategoriestItem from '../components/CategoriestItem';
-import { TX } from '../constants/texts';
+import { CATEGORIES } from '../data/categories';
 
 export default function CategoriesScreen({ navigation }) {
+  const handleSelectedCategory = (item) => {
+    console.log(item);
+    navigation.navigate('Products', {
+      categoryId: item.id,
+      title: item.title,
+    });
+  };
+
+  const renderCategoriesItem = ({ item }) => (
+    <View style={styles.categoriesContainer}>
+      <CategoriestItem
+        item={item}
+        onSelected={() => handleSelectedCategory(item)}
+      />
+    </View>
+  );
+
   return (
     <View style={styles.container}>
-      <View style={styles.categoriesContainer}>
-        <CategoriestItem
-          item={{
-            title: 'titulo de la imagen',
-            img: 'https://reactnative.dev/img/tiny_logo.png',
-          }}
-        />
-      </View>
-      <Text> Categorias </Text>
-      <Button
-        title={TX.GO_TO_PRODUCTS}
-        onPress={() => navigation.navigate('Products')}
+      <FlatList
+        data={CATEGORIES}
+        renderItem={renderCategoriesItem}
+        keyExtractor={(item) => item.id}
       />
     </View>
   );
@@ -25,10 +34,8 @@ export default function CategoriesScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
   },
   categoriesContainer: {
     padding: 15,

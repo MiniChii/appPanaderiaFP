@@ -3,8 +3,10 @@ import React from 'react';
 
 const CategoriestItem = ({ item, onSelected }) => {
   return (
-    <View style={styles.categoriesItem}>
-      <TouchableOpacity style={styles.container}>
+    <View
+      style={{ ...styles.categoriesItem, ...{ backgroundColor: item.color } }}
+    >
+      <TouchableOpacity style={styles.container} onPress={onSelected}>
         <View style={styles.textContainer}>
           <Text>{item.title}</Text>
         </View>
