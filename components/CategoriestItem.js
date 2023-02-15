@@ -6,7 +6,10 @@ const CategoriestItem = ({ item, onSelected }) => {
     <View
       style={{ ...styles.categoriesItem, ...{ backgroundColor: item.color } }}
     >
-      <TouchableOpacity style={styles.container} onPress={onSelected}>
+      <TouchableOpacity
+        style={styles.container}
+        onPress={() => onSelected(item)}
+      >
         <View style={styles.textContainer}>
           <Text>{item.title}</Text>
         </View>

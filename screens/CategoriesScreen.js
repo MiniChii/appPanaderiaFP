@@ -1,11 +1,10 @@
 import React from 'react';
-import { Text, StyleSheet, View, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
 import CategoriestItem from '../components/CategoriestItem';
 import { CATEGORIES } from '../data/categories';
 
 export default function CategoriesScreen({ navigation }) {
   const handleSelectedCategory = (item) => {
-    console.log(item);
     navigation.navigate('Products', {
       categoryId: item.id,
       title: item.title,
@@ -14,10 +13,7 @@ export default function CategoriesScreen({ navigation }) {
 
   const renderCategoriesItem = ({ item }) => (
     <View style={styles.categoriesContainer}>
-      <CategoriestItem
-        item={item}
-        onSelected={() => handleSelectedCategory(item)}
-      />
+      <CategoriestItem item={item} onSelected={handleSelectedCategory} />
     </View>
   );
 

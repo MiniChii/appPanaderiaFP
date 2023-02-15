@@ -1,22 +1,37 @@
 import React from 'react';
-import { Text, StyleSheet, View, Button } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
+import ProductsItem from '../components/ProductItem';
 import { TX } from '../constants/texts';
-export default function ProductsScreen({ navigation }) {
+import { PRODUCTS } from '../data/products';
+
+export default function ProductsScreen({ navigation, route }) {
+  const handleSelectedProduct = (item) => {
+    //console.log(item);
+    navigation.navigate('Details', {
+      name: item.name,
+    });
+  };
+
+  const renderProductItem = ({ item }) => (
+    <ProductsItem product={item} onSelected={handleSelectedProduct} />
+  );
   return (
-    <View style={styles.container}>
-      <Text> Productos de la categoría </Text>
-      <Button
-        title={TX.GO_TO_DETAILS}
-        onPress={() => navigation.navigate('Detail')}
-      />
-    </View>
+    <FlatList
+      data={PRODUCTS}
+      renderItem={renderProductItem}
+      keyExtractor={(item) => item.id}
+    />
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  productsContainer: {
+    height: 150,
+    width: 150,
   },
 });
