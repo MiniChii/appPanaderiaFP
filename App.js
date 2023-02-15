@@ -9,7 +9,7 @@ export default function App() {
     OpenSansBold: require('./assets/fonts/OpenSans-Bold.ttf'),
   });
 
-  if (!loaded) return <AppLoading />;
+  //if (!loaded) return <AppLoading />;
   return <ShopNavigator />;
 }
 

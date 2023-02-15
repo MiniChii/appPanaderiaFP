@@ -1,10 +1,11 @@
 import React from 'react';
-import { Text, StyleSheet, View, Button } from 'react-native';
+import { Text, StyleSheet, View } from 'react-native';
+import { TX } from '../constants/texts';
 
 export default function BreadDetailsScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text> Detalle del producto </Text>
+      <Text> {TX.PRODUCT_DETAILS} </Text>
     </View>
   );
 }
