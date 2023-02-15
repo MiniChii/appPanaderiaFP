@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet, View, Button } from 'react-native';
 import { TX } from '../constants/texts';
-export default function BreadDetailsScreen({ navigation }) {
+export default function ProductsScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text> Productos de la categoría </Text>

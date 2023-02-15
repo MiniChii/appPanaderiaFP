@@ -2,9 +2,9 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import BreadDetailsScreen from '../screens/BreadDetailsScreen';
+import DetailsScreen from '../screens/DetailsScreen';
 import CategoriesScreen from '../screens/CategoriesScreen';
-import CategoryBreadScreen from '../screens/CategoryBreadScreen';
+import ProductsScreen from '../screens/ProductsScreen';
 import { Platform } from 'react-native';
 import { COLORS } from '../constants/colors';
 import { TX } from '../constants/texts';
@@ -32,8 +32,8 @@ const ShopNavigator = () => (
           title: TX.MY_BREAD,
         }}
       ></Stack.Screen>
-      <Stack.Screen name="Bread" component={CategoryBreadScreen}></Stack.Screen>
-      <Stack.Screen name="Detail" component={BreadDetailsScreen}></Stack.Screen>
+      <Stack.Screen name="Products" component={ProductsScreen}></Stack.Screen>
+      <Stack.Screen name="Detail" component={DetailsScreen}></Stack.Screen>
     </Stack.Navigator>
   </NavigationContainer>
 );
