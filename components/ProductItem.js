@@ -1,11 +1,11 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 
-const ProductsItem = ({ product, onSelected }) => {
+const ProductsItem = ({ item, onSelected }) => {
   return (
     <TouchableOpacity
       style={styles.itemContainer}
-      onPress={() => onSelected(product)}
+      onPress={() => onSelected(item)}
     >
       <View style={styles.imageContainer}>
         <Image
@@ -16,9 +16,9 @@ const ProductsItem = ({ product, onSelected }) => {
         />
       </View>
       <View style={styles.textContainer}>
-        <Text>{product.name}</Text>
-        <Text>{product.description}</Text>
-        <Text>${product.price}</Text>
+        <Text>{item.name}</Text>
+        <Text>{item.description}</Text>
+        <Text>${item.price}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -36,15 +36,19 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 10,
     elevation: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   imageContainer: {
-    height: '60%',
+    flex: 1,
   },
   textContainer: {
-    height: '40%',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   image: {
-    height: '100%',
-    width: '100%',
+    height: 100,
+    width: 100,
+    resizeMode: 'contain',
   },
 });

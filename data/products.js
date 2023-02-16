@@ -40,4 +40,29 @@ export const PRODUCTS = [
     weight: '300gr',
     price: 20,
   },
+  {
+    id: '6',
+    category: '1',
+    name: '(2)Pan de hamburguesa',
+    description: 'Textura suave, decorado con semilla de sesamo tostadas',
+    weight: '120gr',
+    price: 10,
+  },
+  {
+    id: '7',
+    category: '3',
+    name: '(2)Pan de molde integral de centeno',
+    description: 'Pidelo entero o tajado, con o sin semillas',
+    weight: '200gr',
+    price: 35,
+  },
+  {
+    id: '8',
+    category: '2',
+    name: '(2)Dona de chocolate',
+    description:
+      'Dona cubierta de chocolate, puedes pedirlo con chocolate blanco',
+    weight: '300gr',
+    price: 20,
+  },
 ];

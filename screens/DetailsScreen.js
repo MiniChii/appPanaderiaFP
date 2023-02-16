@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 import { TX } from '../constants/texts';
 
-export default function DetailsScreen({ navigation }) {
+export default function DetailsScreen({ navigation, route }) {
+  useEffect(() => {
+    console.log('route.params', route.params);
+  }, []);
   return (
     <View style={styles.container}>
-      <Text> {TX.PRODUCT_DETAILS} </Text>
+      <Text> {route.params.name} </Text>
     </View>
   );
 }
