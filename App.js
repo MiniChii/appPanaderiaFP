@@ -1,7 +1,8 @@
 import { StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
-import AppLoading from 'expo-app-loading';
-import ShopNavigator from './navigation/ShopNavigator';
+
+import { NavigationContainer } from '@react-navigation/native';
+import BottomTabNavigator from './navigation/BottomTabNavigator';
 
 export default function App() {
   const [loaded] = useFonts({
@@ -9,8 +10,12 @@ export default function App() {
     OpenSansBold: require('./assets/fonts/OpenSans-Bold.ttf'),
   });
 
-  //if (!loaded) return <AppLoading />;
-  return <ShopNavigator />;
+  if (!loaded) return null;
+  return (
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({});
