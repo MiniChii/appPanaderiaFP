@@ -5,4 +5,7 @@ export const TX = {
   MY_BREAD: 'Mi Panadería',
   CART: 'Carrito',
   SHOP: 'Tienda',
+  QUANTITY: 'Cantidad',
+  PRICE: 'Precio',
+  ORDERS: 'Órdenes',
 };

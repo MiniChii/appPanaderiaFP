@@ -6,7 +6,6 @@ import DetailsScreen from '../screens/DetailsScreen';
 import CategoriesScreen from '../screens/CategoriesScreen';
 import ProductsScreen from '../screens/ProductsScreen';
 
-import { COLORS } from '../constants/colors';
 import { TX } from '../constants/texts';
 
 const Stack = createNativeStackNavigator();
@@ -14,8 +13,6 @@ const ShopNavigator = () => (
   <Stack.Navigator
     initialRouteName="Categories"
     screenOptions={{
-      // headerStyle: { backgroundColor: COLORS.primary },
-      // headerTintColor: COLORS.secondary,
       headerShadowVisible: false,
       headerTitleStyle: {
         fontWeight: 'bold',

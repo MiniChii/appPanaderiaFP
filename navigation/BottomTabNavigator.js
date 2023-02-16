@@ -5,6 +5,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import ShopNavigator from './ShopNavigator';
 import CartNavigator from './CartNavigator';
 import { TX } from '../constants/texts';
+import OrderNavigator from './OrderNavigator';
 
 const BottomTabs = createBottomTabNavigator();
 const renderIcon = (icono, label) => (
@@ -36,6 +37,13 @@ export default BottomTabNavigator = () => {
         component={CartNavigator}
         options={{
           tabBarIcon: () => renderIcon('cart', TX.CART),
+        }}
+      />
+      <BottomTabs.Screen
+        name="OrderTab"
+        component={OrderNavigator}
+        options={{
+          tabBarIcon: () => renderIcon('list', TX.ORDERS),
         }}
       />
     </BottomTabs.Navigator>

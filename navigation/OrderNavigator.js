@@ -1,14 +1,15 @@
 import React from 'react';
-
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { TX } from '../constants/texts';
-import CartScreen from '../screens/CartScreen';
+
+import OrderScreen from '../screens/OrderScreen';
 
 const Stack = createNativeStackNavigator();
-const CartNavigator = () => (
+
+export default OrderNavigator = () => (
   <Stack.Navigator
-    initialRouteName="Categories"
+    initialRouteName="Orders"
     screenOptions={{
       headerShadowVisible: false,
       headerTitleStyle: {
@@ -17,13 +18,11 @@ const CartNavigator = () => (
     }}
   >
     <Stack.Screen
-      name="Cart"
-      component={CartScreen}
+      name="Orders"
+      component={OrderScreen}
       options={{
-        title: TX.CART,
+        title: TX.ORDERS,
       }}
     />
   </Stack.Navigator>
 );
-
-export default CartNavigator;
